@@ -1,0 +1,795 @@
+{
+  "com/latmod/mods/projectex/ProjectEX": {
+    "name": "com/latmod/mods/projectex/ProjectEX",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/fml/common/Mod;",
+        "target": "com/latmod/mods/projectex/ProjectEX",
+        "values": {
+          "acceptedMinecraftVersions": {
+            "value": "[1.12.2]"
+          },
+          "dependencies": {
+            "value": "required-after:projecte"
+          },
+          "modid": {
+            "value": "projectex"
+          },
+          "name": {
+            "value": "Project EX"
+          },
+          "version": {
+            "value": "1.2.0.40"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/fml/common/Mod$Instance;",
+        "target": "INSTANCE",
+        "value": {
+          "value": "projectex"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/fml/common/SidedProxy;",
+        "target": "PROXY",
+        "values": {
+          "clientSide": {
+            "value": "com.latmod.mods.projectex.client.ProjectEXClient"
+          },
+          "serverSide": {
+            "value": "com.latmod.mods.projectex.ProjectEXCommon"
+          }
+        }
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/Mod$EventHandler;",
+        "target": "onPreInit(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/Mod$EventHandler;",
+        "target": "onInit(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V"
+      }
+    ]
+  },
+  "com/latmod/mods/projectex/ProjectEXConfig": {
+    "name": "com/latmod/mods/projectex/ProjectEXConfig",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/fml/common/Mod$EventBusSubscriber;",
+        "target": "com/latmod/mods/projectex/ProjectEXConfig",
+        "values": {
+          "modid": {
+            "value": "projectex"
+          }
+        }
+      },
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/common/config/Config;",
+        "target": "com/latmod/mods/projectex/ProjectEXConfig",
+        "values": {
+          "category": {
+            "value": ""
+          },
+          "modid": {
+            "value": "projectex"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "general",
+        "value": {
+          "value": "stat.generalButton"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresMcRestart;",
+        "target": "items"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onConfigChanged(Lnet/minecraftforge/fml/client/event/ConfigChangedEvent$OnConfigChangedEvent;)V"
+      }
+    ]
+  },
+  "com/latmod/mods/projectex/ProjectEXConfig$BlockTier": {
+    "name": "com/latmod/mods/projectex/ProjectEXConfig$BlockTier",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "collector_output",
+        "value": {
+          "value": "projectex.tiers.collector_output"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeDouble;",
+        "target": "collector_output",
+        "values": {
+          "max": {
+            "type": "DOUBLE",
+            "value": "9.223372036854776E18"
+          },
+          "min": {
+            "type": "DOUBLE",
+            "value": "0.0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "relay_bonus",
+        "value": {
+          "value": "projectex.tiers.relay_bonus"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeDouble;",
+        "target": "relay_bonus",
+        "values": {
+          "max": {
+            "type": "DOUBLE",
+            "value": "9.223372036854776E18"
+          },
+          "min": {
+            "type": "DOUBLE",
+            "value": "0.0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "relay_transfer",
+        "value": {
+          "value": "projectex.tiers.relay_transfer"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeDouble;",
+        "target": "relay_transfer",
+        "values": {
+          "max": {
+            "type": "DOUBLE",
+            "value": "9.223372036854776E18"
+          },
+          "min": {
+            "type": "DOUBLE",
+            "value": "1.0"
+          }
+        }
+      }
+    ]
+  },
+  "com/latmod/mods/projectex/ProjectEXConfig$General": {
+    "name": "com/latmod/mods/projectex/ProjectEXConfig$General",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "override_emc_formatter",
+        "value": {
+          "values": [
+            "Overrides default EMC formatter from ProjectE with custom one."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "blacklist_power_flower_from_watch",
+        "value": {
+          "values": [
+            "With this enabled, Power Flowers will not be affected by Watch of Flowing Time."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "final_star_copy_any_item",
+        "value": {
+          "values": [
+            "If set to false, it will only copy items with EMC value."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "final_star_copy_nbt",
+        "value": {
+          "values": [
+            "If set to false, it will remove item NBT."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "final_star_update_interval",
+        "value": {
+          "values": [
+            "Set to 0 to completely disable itemc copying."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "final_star_update_interval",
+        "values": {
+          "min": {
+            "type": "INT",
+            "value": "0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "emc_link_max_out",
+        "value": {
+          "values": [
+            "Max item that will be displayed.",
+            "0 disables item exporting from links and makes refined ones useless.",
+            "Reduce this if you are having problems with auto-crafting or similar things."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "enable_stone_table_whitelist",
+        "value": {
+          "values": [
+            "The whitelist for Stone Table will be ignored unless this is set to true."
+          ]
+        }
+      }
+    ]
+  },
+  "com/latmod/mods/projectex/ProjectEXConfig$ItemsConfig": {
+    "name": "com/latmod/mods/projectex/ProjectEXConfig$ItemsConfig",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "link",
+        "value": {
+          "value": "tile.projectex.personal_link.name"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "knowledge_sharing_book",
+        "value": {
+          "value": "item.projectex.knowledge_sharing_book.name"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "final_star",
+        "value": {
+          "value": "item.projectex.final_star.name"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "stone_table",
+        "value": {
+          "value": "tile.projectex.stone_table.name"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "arcane_tablet",
+        "value": {
+          "value": "item.projectex.arcane_tablet.name"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "clay_matter",
+        "value": {
+          "value": "item.projectex.matter.clay.name"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "alchemy_table",
+        "value": {
+          "value": "tile.projectex.alchemy_table.name"
+        }
+      }
+    ]
+  },
+  "com/latmod/mods/projectex/ProjectEXEventHandler": {
+    "name": "com/latmod/mods/projectex/ProjectEXEventHandler",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/fml/common/Mod$EventBusSubscriber;",
+        "target": "com/latmod/mods/projectex/ProjectEXEventHandler",
+        "values": {
+          "modid": {
+            "value": "projectex"
+          }
+        }
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "registerBlocks(Lnet/minecraftforge/event/RegistryEvent$Register;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "registerItems(Lnet/minecraftforge/event/RegistryEvent$Register;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onItemCrafted(Lnet/minecraftforge/fml/common/gameevent/PlayerEvent$ItemCraftedEvent;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "addRecipes(Lnet/minecraftforge/event/RegistryEvent$Register;)V"
+      }
+    ]
+  },
+  "com/latmod/mods/projectex/block/EnumMatter": {
+    "name": "com/latmod/mods/projectex/block/EnumMatter",
+    "interfaces": [
+      "net/minecraft/util/IStringSerializable",
+      "java/util/function/Supplier"
+    ]
+  },
+  "com/latmod/mods/projectex/block/EnumTier": {
+    "name": "com/latmod/mods/projectex/block/EnumTier",
+    "interfaces": [
+      "net/minecraft/util/IStringSerializable"
+    ]
+  },
+  "com/latmod/mods/projectex/block/ProjectEXBlocks": {
+    "name": "com/latmod/mods/projectex/block/ProjectEXBlocks",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/fml/common/registry/GameRegistry$ObjectHolder;",
+        "target": "com/latmod/mods/projectex/block/ProjectEXBlocks",
+        "value": {
+          "value": "projectex"
+        }
+      }
+    ]
+  },
+  "com/latmod/mods/projectex/block/package-info": {
+    "name": "com/latmod/mods/projectex/block/package-info",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lmcp/MethodsReturnNonnullByDefault;",
+        "target": "com/latmod/mods/projectex/block/package-info"
+      }
+    ]
+  },
+  "com/latmod/mods/projectex/client/ProjectEXClientConfig": {
+    "name": "com/latmod/mods/projectex/client/ProjectEXClientConfig",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/common/config/Config;",
+        "target": "com/latmod/mods/projectex/client/ProjectEXClientConfig",
+        "values": {
+          "category": {
+            "value": ""
+          },
+          "modid": {
+            "value": "projectex"
+          },
+          "name": {
+            "value": "../local/client/projectex"
+          }
+        }
+      },
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "com/latmod/mods/projectex/client/ProjectEXClientConfig",
+        "value": {
+          "value": "projectex_client"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "general",
+        "value": {
+          "value": "stat.generalButton"
+        }
+      }
+    ]
+  },
+  "com/latmod/mods/projectex/client/ProjectEXClientEventHandler": {
+    "name": "com/latmod/mods/projectex/client/ProjectEXClientEventHandler",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/fml/common/Mod$EventBusSubscriber;",
+        "target": "com/latmod/mods/projectex/client/ProjectEXClientEventHandler",
+        "values": {
+          "modid": {
+            "value": "projectex"
+          },
+          "value": {
+            "type": "ENUM",
+            "values": [
+              "Lnet/minecraftforge/fml/relauncher/Side;/CLIENT"
+            ]
+          }
+        }
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "registerModels(Lnet/minecraftforge/client/event/ModelRegistryEvent;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "clientTick(Lnet/minecraftforge/fml/common/gameevent/TickEvent$ClientTickEvent;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "clientDisconnectionFromServer(Lnet/minecraftforge/fml/common/network/FMLNetworkEvent$ClientDisconnectionFromServerEvent;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "addInfoText(Lnet/minecraftforge/client/event/RenderGameOverlayEvent$Text;)V"
+      }
+    ]
+  },
+  "com/latmod/mods/projectex/client/package-info": {
+    "name": "com/latmod/mods/projectex/client/package-info",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lmcp/MethodsReturnNonnullByDefault;",
+        "target": "com/latmod/mods/projectex/client/package-info"
+      }
+    ]
+  },
+  "com/latmod/mods/projectex/gui/GuiTableBase": {
+    "name": "com/latmod/mods/projectex/gui/GuiTableBase",
+    "interfaces": [
+      "com/latmod/mods/projectex/gui/ContainerTableBase$KnowledgeUpdate"
+    ]
+  },
+  "com/latmod/mods/projectex/gui/ProjectEXGuiHandler": {
+    "name": "com/latmod/mods/projectex/gui/ProjectEXGuiHandler",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/IGuiHandler"
+    ]
+  },
+  "com/latmod/mods/projectex/gui/package-info": {
+    "name": "com/latmod/mods/projectex/gui/package-info",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lmcp/MethodsReturnNonnullByDefault;",
+        "target": "com/latmod/mods/projectex/gui/package-info"
+      }
+    ]
+  },
+  "com/latmod/mods/projectex/integration/OfflineKnowledgeProvider": {
+    "name": "com/latmod/mods/projectex/integration/OfflineKnowledgeProvider",
+    "interfaces": [
+      "moze_intel/projecte/api/capabilities/IKnowledgeProvider"
+    ]
+  },
+  "com/latmod/mods/projectex/integration/PersonalEMC": {
+    "name": "com/latmod/mods/projectex/integration/PersonalEMC",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/fml/common/Mod$EventBusSubscriber;",
+        "target": "com/latmod/mods/projectex/integration/PersonalEMC",
+        "values": {
+          "modid": {
+            "value": "projectex"
+          }
+        }
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "playerLoggedIn(Lnet/minecraftforge/fml/common/gameevent/PlayerEvent$PlayerLoggedInEvent;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "playerLoggedOut(Lnet/minecraftforge/fml/common/gameevent/PlayerEvent$PlayerLoggedOutEvent;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "playerTick(Lnet/minecraftforge/fml/common/gameevent/TickEvent$PlayerTickEvent;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "worldSaved(Lnet/minecraftforge/event/world/WorldEvent$Save;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "worldUnloaded(Lnet/minecraftforge/event/world/WorldEvent$Unload;)V"
+      }
+    ]
+  },
+  "com/latmod/mods/projectex/integration/jei/AlchemyTableCategory": {
+    "name": "com/latmod/mods/projectex/integration/jei/AlchemyTableCategory",
+    "interfaces": [
+      "mezz/jei/api/recipe/IRecipeCategory"
+    ]
+  },
+  "com/latmod/mods/projectex/integration/jei/AlchemyTableWrapper": {
+    "name": "com/latmod/mods/projectex/integration/jei/AlchemyTableWrapper",
+    "interfaces": [
+      "mezz/jei/api/recipe/IRecipeWrapper"
+    ]
+  },
+  "com/latmod/mods/projectex/integration/jei/ArcaneTabletJEI": {
+    "name": "com/latmod/mods/projectex/integration/jei/ArcaneTabletJEI",
+    "interfaces": [
+      "mezz/jei/api/gui/IAdvancedGuiHandler",
+      "mezz/jei/api/recipe/transfer/IRecipeTransferHandler"
+    ]
+  },
+  "com/latmod/mods/projectex/integration/jei/ArcaneTabletJEI$1": {
+    "name": "com/latmod/mods/projectex/integration/jei/ArcaneTabletJEI$1",
+    "interfaces": [
+      "mezz/jei/api/recipe/transfer/IRecipeTransferError"
+    ]
+  },
+  "com/latmod/mods/projectex/integration/jei/EMCLinkJEI": {
+    "name": "com/latmod/mods/projectex/integration/jei/EMCLinkJEI",
+    "interfaces": [
+      "mezz/jei/api/gui/IAdvancedGuiHandler",
+      "mezz/jei/api/gui/IGhostIngredientHandler"
+    ]
+  },
+  "com/latmod/mods/projectex/integration/jei/EMCLinkJEI$1": {
+    "name": "com/latmod/mods/projectex/integration/jei/EMCLinkJEI$1",
+    "interfaces": [
+      "mezz/jei/api/gui/IGhostIngredientHandler$Target"
+    ]
+  },
+  "com/latmod/mods/projectex/integration/jei/ProjectEXJEIIntegration": {
+    "name": "com/latmod/mods/projectex/integration/jei/ProjectEXJEIIntegration",
+    "interfaces": [
+      "mezz/jei/api/IModPlugin"
+    ],
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lmezz/jei/api/JEIPlugin;",
+        "target": "com/latmod/mods/projectex/integration/jei/ProjectEXJEIIntegration"
+      }
+    ]
+  },
+  "com/latmod/mods/projectex/integration/jei/StoneTableJEI": {
+    "name": "com/latmod/mods/projectex/integration/jei/StoneTableJEI",
+    "interfaces": [
+      "mezz/jei/api/gui/IAdvancedGuiHandler"
+    ]
+  },
+  "com/latmod/mods/projectex/integration/jei/package-info": {
+    "name": "com/latmod/mods/projectex/integration/jei/package-info",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lmcp/MethodsReturnNonnullByDefault;",
+        "target": "com/latmod/mods/projectex/integration/jei/package-info"
+      }
+    ]
+  },
+  "com/latmod/mods/projectex/integration/package-info": {
+    "name": "com/latmod/mods/projectex/integration/package-info",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lmcp/MethodsReturnNonnullByDefault;",
+        "target": "com/latmod/mods/projectex/integration/package-info"
+      }
+    ]
+  },
+  "com/latmod/mods/projectex/item/ItemFinalStar": {
+    "name": "com/latmod/mods/projectex/item/ItemFinalStar",
+    "interfaces": [
+      "moze_intel/projecte/api/item/IItemEmc",
+      "moze_intel/projecte/api/item/IPedestalItem"
+    ]
+  },
+  "com/latmod/mods/projectex/item/ItemMagnumStar": {
+    "name": "com/latmod/mods/projectex/item/ItemMagnumStar",
+    "interfaces": [
+      "moze_intel/projecte/api/item/IItemEmc"
+    ]
+  },
+  "com/latmod/mods/projectex/item/ProjectEXItems": {
+    "name": "com/latmod/mods/projectex/item/ProjectEXItems",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/fml/common/registry/GameRegistry$ObjectHolder;",
+        "target": "com/latmod/mods/projectex/item/ProjectEXItems",
+        "value": {
+          "value": "projectex"
+        }
+      }
+    ]
+  },
+  "com/latmod/mods/projectex/item/TomeRecipeFactory": {
+    "name": "com/latmod/mods/projectex/item/TomeRecipeFactory",
+    "interfaces": [
+      "net/minecraftforge/common/crafting/IConditionFactory"
+    ]
+  },
+  "com/latmod/mods/projectex/item/package-info": {
+    "name": "com/latmod/mods/projectex/item/package-info",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lmcp/MethodsReturnNonnullByDefault;",
+        "target": "com/latmod/mods/projectex/item/package-info"
+      }
+    ]
+  },
+  "com/latmod/mods/projectex/net/MessageArcaneTableRecipeTransfer": {
+    "name": "com/latmod/mods/projectex/net/MessageArcaneTableRecipeTransfer",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage"
+    ]
+  },
+  "com/latmod/mods/projectex/net/MessageArcaneTableRecipeTransfer$Handler": {
+    "name": "com/latmod/mods/projectex/net/MessageArcaneTableRecipeTransfer$Handler",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/latmod/mods/projectex/net/MessageCreateItemButton": {
+    "name": "com/latmod/mods/projectex/net/MessageCreateItemButton",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage"
+    ]
+  },
+  "com/latmod/mods/projectex/net/MessageCreateItemButton$Handler": {
+    "name": "com/latmod/mods/projectex/net/MessageCreateItemButton$Handler",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/latmod/mods/projectex/net/MessageSendLinkStack": {
+    "name": "com/latmod/mods/projectex/net/MessageSendLinkStack",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage"
+    ]
+  },
+  "com/latmod/mods/projectex/net/MessageSendLinkStack$Handler": {
+    "name": "com/latmod/mods/projectex/net/MessageSendLinkStack$Handler",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/latmod/mods/projectex/net/MessageSyncEMC": {
+    "name": "com/latmod/mods/projectex/net/MessageSyncEMC",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage"
+    ]
+  },
+  "com/latmod/mods/projectex/net/MessageSyncEMC$Handler": {
+    "name": "com/latmod/mods/projectex/net/MessageSyncEMC$Handler",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/latmod/mods/projectex/net/package-info": {
+    "name": "com/latmod/mods/projectex/net/package-info",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lmcp/MethodsReturnNonnullByDefault;",
+        "target": "com/latmod/mods/projectex/net/package-info"
+      }
+    ]
+  },
+  "com/latmod/mods/projectex/package-info": {
+    "name": "com/latmod/mods/projectex/package-info",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lmcp/MethodsReturnNonnullByDefault;",
+        "target": "com/latmod/mods/projectex/package-info"
+      }
+    ]
+  },
+  "com/latmod/mods/projectex/tile/TileAlchemyTable": {
+    "name": "com/latmod/mods/projectex/tile/TileAlchemyTable",
+    "interfaces": [
+      "net/minecraft/util/ITickable",
+      "moze_intel/projecte/api/tile/IEmcAcceptor"
+    ]
+  },
+  "com/latmod/mods/projectex/tile/TileCollector": {
+    "name": "com/latmod/mods/projectex/tile/TileCollector",
+    "interfaces": [
+      "net/minecraft/util/ITickable"
+    ]
+  },
+  "com/latmod/mods/projectex/tile/TileEnergyLink": {
+    "name": "com/latmod/mods/projectex/tile/TileEnergyLink",
+    "interfaces": [
+      "net/minecraft/util/ITickable",
+      "moze_intel/projecte/api/tile/IEmcAcceptor"
+    ]
+  },
+  "com/latmod/mods/projectex/tile/TileLink": {
+    "name": "com/latmod/mods/projectex/tile/TileLink",
+    "interfaces": [
+      "net/minecraftforge/items/IItemHandlerModifiable",
+      "net/minecraft/util/ITickable",
+      "moze_intel/projecte/api/tile/IEmcAcceptor"
+    ]
+  },
+  "com/latmod/mods/projectex/tile/TilePowerFlower": {
+    "name": "com/latmod/mods/projectex/tile/TilePowerFlower",
+    "interfaces": [
+      "net/minecraft/util/ITickable"
+    ]
+  },
+  "com/latmod/mods/projectex/tile/TileRelay": {
+    "name": "com/latmod/mods/projectex/tile/TileRelay",
+    "interfaces": [
+      "net/minecraft/util/ITickable",
+      "moze_intel/projecte/api/tile/IEmcAcceptor",
+      "moze_intel/projecte/api/tile/IEmcProvider"
+    ]
+  },
+  "com/latmod/mods/projectex/tile/package-info": {
+    "name": "com/latmod/mods/projectex/tile/package-info",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lmcp/MethodsReturnNonnullByDefault;",
+        "target": "com/latmod/mods/projectex/tile/package-info"
+      }
+    ]
+  }
+}
